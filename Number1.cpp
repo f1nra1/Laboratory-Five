@@ -20,7 +20,7 @@ set<string> all_addresses;
 
 char zones[] = {'A', 'B', 'V'};
 
-void print_help() {
+void help() {
     cout << "\nДоступные команды:\n"
          << "  ADD <товар> <кол-во> <адрес>     - добавить товар\n"
          << "  REMOVE <товар> <кол-во> <адрес>  - удалить товар\n"
@@ -146,7 +146,7 @@ void info() {
 
 int main() {
     init_addresses();
-    print_help(); // Подсказка при запуске
+    help(); // Подсказка при запуске
 
     string line;
     while (true) {
@@ -173,7 +173,7 @@ int main() {
             break;
         } else {
             cout << "Неизвестная команда.\n";
-            print_help(); // Подсказка при ошибке
+            help(); // Подсказка при ошибке
         }
     }
     return 0;

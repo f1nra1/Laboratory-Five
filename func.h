@@ -1,10 +1,11 @@
-#ifndef COMMANDS_H
-#define COMMANDS_H
+#ifndef FUNC_H
+#define FUNC_H
 
 #include <string>
 #include <vector>
 #include <map>
 #include <set>
+#include <optional>
 
 using namespace std;
 
@@ -14,6 +15,8 @@ enum class Type {
     STOPS_IN_TRL,
     TRLS
 };
+
+optional<Type> parse_command(const string& command);
 
 void create_trl(const string& name, const vector<string>& stops,
                 map<string, vector<string>>& trls,

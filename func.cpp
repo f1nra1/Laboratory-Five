@@ -1,10 +1,10 @@
+#include "func.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 #include <set>
 #include <sstream>
-#include "func.h"
 
 using namespace std;
 
@@ -59,4 +59,12 @@ void print_trls(const map<string, vector<string>>& trls) {
             cout << endl;
         }
     }
+}
+
+optional<Type> parse_command(const string& command) {
+    if (command == "CREATE_TRL") return Type::CREATE_TRL;
+    if (command == "TRL_IN_STOP") return Type::TRL_IN_STOP;
+    if (command == "STOPS_IN_TRL") return Type::STOPS_IN_TRL;
+    if (command == "TRLS") return Type::TRLS;
+    return nullopt; // неизвестная команда
 }
